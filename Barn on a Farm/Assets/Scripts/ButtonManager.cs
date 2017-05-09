@@ -7,6 +7,7 @@ public class ButtonManager : MonoBehaviour {
 
     public Transform Canvas;
     public Transform Menu;
+    public Transform Options;
 
     public void Update()
     {
@@ -24,6 +25,21 @@ public class ButtonManager : MonoBehaviour {
         SceneManager.LoadScene(NewGameLevel);
     
     }
+
+    public void OptionsBtn(string Options_Button)
+    {
+        if (Options.gameObject.activeInHierarchy == false)
+        {
+            Options.gameObject.SetActive(true);
+        }
+        else
+        {
+            Options.gameObject.SetActive(false);
+        }
+
+    }
+
+
 
     public void ExitGameBtn()
     {
