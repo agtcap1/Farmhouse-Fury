@@ -8,6 +8,8 @@ public class ButtonManager : MonoBehaviour {
     public Transform Canvas;
     public Transform Menu;
     public Transform Options;
+    public Transform Audio;
+
 
     public void Update()
     {
@@ -31,6 +33,7 @@ public class ButtonManager : MonoBehaviour {
         if (Options.gameObject.activeInHierarchy == false)
         {
             Options.gameObject.SetActive(true);
+
         }
         else
         {
@@ -44,6 +47,25 @@ public class ButtonManager : MonoBehaviour {
     public void ExitGameBtn()
     {
         Application.Quit();
+    }
+
+    public void BackBtn()
+    {
+        if (Audio.gameObject.activeInHierarchy == true)
+        {
+            Audio.gameObject.SetActive(false);
+            Options.gameObject.SetActive(true);
+        }
+        else
+        {
+            Options.gameObject.SetActive(false);
+        }
+    }
+
+    public void AudioBtn()
+    {
+        Options.gameObject.SetActive(false);
+        Audio.gameObject.SetActive(true);
     }
 
 
