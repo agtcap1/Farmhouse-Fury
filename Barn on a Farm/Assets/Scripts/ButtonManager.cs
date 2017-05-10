@@ -9,7 +9,7 @@ public class ButtonManager : MonoBehaviour {
     public Transform Menu;
     public Transform Options;
     public Transform Audio;
-
+    public CanvasGroup Fader;
 
     public void Update()
     {
@@ -19,8 +19,13 @@ public class ButtonManager : MonoBehaviour {
             Menu.gameObject.SetActive(true);
 
         }
+        
             
     }
+
+
+    
+ 
 
     public void NewGameBtn(string NewGameLevel)
     {
