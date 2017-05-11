@@ -7,13 +7,14 @@ public class PauseMenuManager : MonoBehaviour {
 
     public Transform PauseMenu;
     public Transform Options;
+    public Transform Volume;
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (Options.gameObject.activeInHierarchy == true)
             {
-                PauseMenu.gameObject.SetActive(false);
+                PauseMenu.gameObject.SetActive(true);
                 Options.gameObject.SetActive(false);
             }else
             {
@@ -21,6 +22,7 @@ public class PauseMenuManager : MonoBehaviour {
                 {
                     PauseMenu.gameObject.SetActive(true);
                     Options.gameObject.SetActive(false);
+                    Volume.gameObject.SetActive(false);
                 }
                 else
                 {
@@ -46,6 +48,12 @@ public class PauseMenuManager : MonoBehaviour {
             Options.gameObject.SetActive(false);
         }
 
+    }
+
+    public void AudioBtn()
+    {
+        Options.gameObject.SetActive(false);
+        Volume.gameObject.SetActive(true);
     }
 
     public void MainMenuBtn(string MainMenu)
